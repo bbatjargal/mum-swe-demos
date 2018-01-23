@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Student Info</title>
+	<link rel="stylesheet" href="/public/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" th:href="@{/public/css/loginlayout.css}" />
+	<th:block layout:fragment="header"></th:block>	
+</head>
+
+<body>
+
+	<div id="mainpanel">
+		<th:block  layout:fragment="content"></th:block>
+	</div>
+		
+	
+  	<script src="/public/js/jquery-3.3.1.min.js"></script>
+  	<script src="/public/js/bootstrap.bundle.min.js"></script>
+	<th:block layout:fragment="footer"></th:block>	
+</body>
+</html>
