@@ -1,0 +1,34 @@
+<!DOCTYPE html >
+<html layout:decorator="shared/homelayout"
+	xmlns:th="http://www.thymeleaf.org">
+<body>
+	<th:block layout:fragment="header">
+	<link rel="stylesheet" type="text/css" th:href="@{/content/css/studentlist.css}" />
+	</th:block>
+	
+	<th:block layout:fragment="content">
+		<h2>Course List</h2> <br/>
+		<a href="/course">Create a course</a>
+		<a href="/" id="linkBackHome" >Back to home</a><br/><br/>
+		<table class="table table-striped">
+			<thead>
+				<th>Course name</th>
+				<th>Actions</th>
+			</thead>
+			<tbody>
+				<tr th:each="course : ${courses}">
+					<td th:text="${course.courseName}"></td>
+					<td>
+						<a th:href="@{'/course/' + ${course.id}}">Edit</a>&nbsp;
+						<a th:href="@{'/course/delete/' + ${course.id}}">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</th:block>
+	
+	<th:block layout:fragment="footer">
+	</th:block>
+	
+</body>
+</html>
