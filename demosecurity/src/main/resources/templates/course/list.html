@@ -13,11 +13,17 @@
 		<table class="table table-striped">
 			<thead>
 				<th>Course name</th>
+				<th>Faculties</th>
 				<th>Actions</th>
 			</thead>
 			<tbody>
 				<tr th:each="course : ${courses}">
 					<td th:text="${course.courseName}"></td>
+					<td>
+						<span th:each="faculty, iter : ${course.faculties}" 
+							th:text="@{ ${faculty.firstName} + ' ' + ${faculty.lastName} + @{${iter.count != iter.size} ? ', ' : ''} }"></span>
+
+					</td>
 					<td>
 						<a th:href="@{'/course/' + ${course.id}}">Edit</a>&nbsp;
 						<a th:href="@{'/course/delete/' + ${course.id}}">Delete</a>

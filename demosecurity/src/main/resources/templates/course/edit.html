@@ -25,7 +25,8 @@
 		    <label class="control-label col-sm-2" for="coursename">Faculties:</label>
 		    <div class="col-sm-10"> 
 			    <select th:field="*{faculties}" class="form-control" multiple>
-			       <option th:each="faculty: ${allfaculties}" th:value="${faculty.id}" th:text="${faculty.firstName}"></option>
+			       <option th:each="faculty: ${allfaculties}" th:value="${faculty.id}" 
+			       	th:text="@{${faculty.firstName} + ' '+ ${faculty.lastName}}"></option>
 			    </select>
 			    
 			    
